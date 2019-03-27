@@ -23,7 +23,7 @@ public class procDeleteContTabOneRow {
 		
 		deleteInfo.setInfomation_delte(toJson(dynamicRunMethod(classPath).getInfo(deleteInfo)));
 		if( 1 == deleteManger.createDeleteInfo(deleteInfo) ) {
-			if( 1 == (int)dynamicRunMethod(classPath).deleteInfo(deleteInfo) ) {
+			if( 1 == dynamicRunMethod(classPath).deleteInfo(deleteInfo) ) {
 				System.out.println("삭제 전체 성공");
 			}
 		}
