@@ -35,11 +35,17 @@ public class procDeleteContTabOneRow {
 		String classPath = "com.song.woo.TradeManager";
 		String voPath = "com.song.woo.TradeInfo";
 		
-		//조회
+		// 조회
 		DeleteInfo getDeleteInfo= deleteManger.getDeleteInfo(deleteInfo);
+		// json -> dto 변경
 		Object information_delete = jsonToVo(getDeleteInfo.getInfomation_delte(), voPath);
-		dynamicRunMethod(classPath).createInfo(information_delete);
-		//json -> dto 변경
+		// 복구
+		if( 1 == dynamicRunMethod(classPath).createInfo(information_delete) ) {
+			System.out.println("저장 성공");
+			if ( 1 == deleteManger.modifyYnResoreToY(deleteInfo)) {
+				System.out.println("복구 성공");
+			}
+		}
 	}
 	
 	// 복구

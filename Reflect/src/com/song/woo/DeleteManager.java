@@ -9,4 +9,9 @@ public class DeleteManager  {
 		System.out.println(dto.toString()+" 持失");
 		return dto;
 	}
+	
+	public int modifyYnResoreToY(DeleteInfo dto) {
+		System.out.println(dto.toString()+" 持失");
+		return 1;
+	}
 }
